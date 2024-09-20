@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card">  
     <div class="card-header">
         Lista de productos
     </div>
@@ -17,10 +17,13 @@
             </div>
         </div>
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" *ngIf="productos.length">
                 <thead>
                     <tr>
-                        <th>Imagen: </th>
+                        <th>
+                            <button (click)="mostrarImagen()" class="btn btn-primary"
+                            type="button">Imagen</button>
+                        </th>
                         <th>Modelo: </th>
                         <th>Descripción: </th>
                         <th>Año: </th>
@@ -31,7 +34,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let producto of productos">
-                        <td>
+                        <td *ngIf="muestraImg">
                             <img [src]="producto.ImagenUrl"
                             [title]="producto.Modelo"
                             [style.width.px]="imageWidth"

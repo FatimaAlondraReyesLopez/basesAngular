@@ -6,10 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  
+
   imageWidth:number=50;
   imageMargin:number=2;
   muestraImg:boolean=true;
+  mostrarImagen():void{
+    this.muestraImg=!this.muestraImg
+  }
 
   productos:any[]=[
     {
