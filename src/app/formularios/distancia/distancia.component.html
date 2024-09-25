@@ -1,0 +1,26 @@
+<!-- Distancia entre dos puntos -->
+<div>
+    <h1>Encuentra la distancia entre los puntos A y B</h1>
+    <form [formGroup]="distanciaPuntos">
+        <div>
+            <label>Coordenada X1:</label>
+            <input formControlName="CoordenadaX1" type="number">
+        </div>
+        <div>
+            <label>Coordenada Y1:</label>
+            <input formControlName="CoordenadaY1" type="number">
+        </div>
+        
+        <div>
+            <label>Coordenada X2:</label>
+            <input formControlName="CoordenadaX2" type="number">
+        </div>
+        <div>
+            <label>Coordenada Y2:</label>
+            <input formControlName="CoordenadaY2" type="number">
+        </div>
+
+        <button (click)="calcDistancia()">Distancia</button>
+        <h3>La distancia entre puntos es: {{resultado}}</h3>
+    </form>
+</div>
