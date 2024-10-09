@@ -1,0 +1,40 @@
+<div class="container">
+  <!-- Formulario -->
+  <div class="form-container">
+    <form [formGroup]="zodiacForm" (ngSubmit)="onSubmit()">
+      <label>Nombre:</label>
+      <input type="text" formControlName="firstName" />
+      
+      <label>Apellido Paterno:</label>
+      <input type="text" formControlName="lastName" />
+      
+      <label>Apellido Materno:</label>
+      <input type="text" formControlName="motherName" />
+
+      <label>Día de nacimiento:</label>
+      <input type="number" formControlName="day" />
+      
+      <label>Mes de nacimiento:</label>
+      <input type="number" formControlName="month" />
+      
+      <label>Año de nacimiento:</label>
+      <input type="number" formControlName="year" />
+      
+      <label>Sexo:</label>
+      <div>
+        <input type="radio" formControlName="gender" value="male" /> Masculino
+        <input type="radio" formControlName="gender" value="female" /> Femenino
+      </div>
+      
+      <button type="submit" [disabled]="!zodiacForm.valid">Imprimir</button>
+    </form>
+  </div>
+
+  <div class="result-container" *ngIf="age && zodiacSign">
+    <p>¡𝓗𝓸𝓵𝓪! <span class="name">{{ zodiacForm.value.firstName }} {{ zodiacForm.value.lastName }} {{ zodiacForm.value.motherName }}</span></p>
+    <p>Tienes <span class="age">{{ age }}</span> años</p>
+    <p>Tu signo zodiacal</p>
+    <p class="sign">Es {{ zodiacSign }}</p>
+    <img [src]= "zodiacSign.toLowerCase() + '.png'" alt="Signo Zodiacal" />
+  </div>
+</div>

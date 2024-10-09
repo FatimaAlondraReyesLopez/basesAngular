@@ -1,0 +1,15 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+  
+  label {
+    margin: 5px 0;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
